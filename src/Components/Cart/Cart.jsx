@@ -1,5 +1,6 @@
 import Navbar from "../ShopWindow/Navbar";
 import { useChosenProducts } from "../ChosenProductsProvider";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { chosenProducts, setChosenProducts } = useChosenProducts();
@@ -54,11 +55,13 @@ const Cart = () => {
               key={index}
               className="mt-16 flex grow-0 items-center justify-between"
             >
-              <img
-                src={product.image}
-                alt={product.title}
-                className="rounded-xl max-w-20 h-[15vh]"
-              />
+              <Link to={`/ProductPage/${product.id}`}>
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="rounded-xl max-w-20 h-[15vh]"
+                />
+              </Link>
               <span>${parseInt(product.price)}</span>
               <span className="w-52">{title}</span>
               <div className="w-44 flex justify-between items-center">
