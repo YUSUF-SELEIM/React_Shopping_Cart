@@ -35,7 +35,7 @@ export default function ProductPage() {
   return (
     <>
       <Navbar chosenProducts={chosenProducts}></Navbar>
-      <div className="w-full flex flex-col items-center mt-10 h-[80vh] md:mt-0 md:flex-row md:items-center md:justify-center md:space-x-6">
+      <div className="w-full px-4 flex flex-col items-center mt-10 h-[80vh] md:mt-0 md:flex-row md:items-center md:justify-center md:space-x-6">
         <div className="cursor-zoom-in">
           <Zoom img={data.image} zoomScale={2} width={600} height={400} />
         </div>
