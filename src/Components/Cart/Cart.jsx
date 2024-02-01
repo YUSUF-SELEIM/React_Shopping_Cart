@@ -58,17 +58,18 @@ const Cart = () => {
           product.quantity ? (
             <div
               key={index}
-              className="mt-16 flex grow-0 items-center justify-between"
+              className="mt-16 flex flex-wrap items-center justify-between space-x-10 space-y-8 md:space-x-0 md:space-y-0"
             >
               <Link to={`/ProductPage/${product.id}`}>
                 <img
                   src={product.image}
-                  alt={product.title}
                   className="rounded-xl max-w-20 h-[15vh]"
                 />
               </Link>
               <span>${parseInt(product.price)}</span>
-              <span className="w-52">{title}</span>
+              <span className="w-52 truncate md:whitespace-normal">
+                {title}
+              </span>
               <div className="w-44 flex justify-between items-center">
                 <button
                   className="btn btn-circle btn-outline"
@@ -142,7 +143,11 @@ const Cart = () => {
       <div className="flex justify-end p-4">
         <div className="flex flex-col justify-between items-center  space-y-4">
           <p className="text-xl">Overall Total: ${parseInt(totalPrice)}</p>
-          <button className="btn btn-outline btn-accent">Checkout</button>
+          <Link to={"/ShoppingPage"}>
+            <button className="btn btn-outline btn-accent">
+              Keep Shopping
+            </button>
+          </Link>
         </div>
       </div>
     </div>
