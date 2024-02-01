@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Navbar from "./Navbar";
 import ImageCarousel from "./ImageCarousel";
-import Testimonials from "./Testmonials";
+import Testimonials from "./Testimonials";
 import ShopNow from "./ShopNow";
 import Footer from "./Footer";
 
