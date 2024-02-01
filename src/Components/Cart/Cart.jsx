@@ -1,9 +1,14 @@
-import Navbar from "../ShopWindow/Navbar";
 import { useChosenProducts } from "../ChosenProductsProvider";
+import EmptyCart from "./EmptyCart";
+import Navbar from "../ShopWindow/Navbar";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { chosenProducts, setChosenProducts } = useChosenProducts();
+  if (!chosenProducts.size) {
+    return <EmptyCart></EmptyCart>;
+  }
+
   const totalPrice = Array.from(chosenProducts.values()).reduce(
     (total, product) => {
       return total + product.price;
