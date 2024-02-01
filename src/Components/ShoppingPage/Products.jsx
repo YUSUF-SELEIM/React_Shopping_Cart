@@ -3,17 +3,18 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import LoadingSpinner from "../LoadingSpinner";
 import ErrorPage from "../ErrorPage";
+import { Link } from "react-router-dom";
 
 const fetchProducts = async () => {
   try {
-    const response = await axios.get("https://fakestoreapi.com/products?");
+    const response = await axios.get("https://fakestoreapi.com/products");
     return response.data;
   } catch (error) {
     throw new Error("Error fetching Products: " + error.message);
   }
 };
 
-export default function Products({ handleAddChosenProductsInCart }) {
+export default function Products() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["Products"],
     queryFn: fetchProducts,
@@ -47,11 +48,8 @@ export default function Products({ handleAddChosenProductsInCart }) {
               {product.price} $
             </p>
             <div className="card-actions">
-              <button
-                className="btn btn-primary"
-                onClick={() => handleAddChosenProductsInCart(product)}
-              >
-                Buy Now
+              <button className="btn btn-primary">
+                <Link to={`/ProductPage/${product.id}`}>View</Link>
               </button>
             </div>
           </div>
