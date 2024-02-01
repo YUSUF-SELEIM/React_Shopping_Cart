@@ -58,7 +58,7 @@ const Cart = () => {
           product.quantity ? (
             <div
               key={index}
-              className="mt-16 flex flex-wrap items-center justify-center md:justify-between space-x-10 space-y-8 md:space-x-0 md:space-y-0"
+              className="mt-16 flex flex-wrap items-start md:items-center justify-between space-y-4 md:space-x-0 md:space-y-0"
             >
               <Link to={`/ProductPage/${product.id}`}>
                 <img
@@ -70,7 +70,7 @@ const Cart = () => {
               <span className="w-52 truncate md:whitespace-normal">
                 {title}
               </span>
-              <div className="w-44 flex justify-between items-center">
+              <div className="w-32 md:w-44 flex justify-between items-center">
                 <button
                   className="btn btn-circle btn-outline"
                   onClick={() => increaseQuantity(title)}
