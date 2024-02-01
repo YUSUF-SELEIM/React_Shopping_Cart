@@ -5,7 +5,7 @@ const Testimonials = () => {
   return (
     <div className="w-full px-4 flex flex-col space-y-5 md:flex-row justify-between items-center mt-16">
       <Tilt>
-        <div className="w-96 h-[70vh] flex flex-col items-center justify-around rounded shadow-lg">
+        <div className="w-80 md:w-96 h-[70vh] flex flex-col items-center justify-around rounded shadow-lg">
           <img className="medal" />
           <div className="flex justify-center">
             <div className="font-bold text-xl mb-2">High Quality</div>
@@ -13,7 +13,7 @@ const Testimonials = () => {
         </div>
       </Tilt>
       <Tilt>
-        <div className="w-96 h-[70vh] flex flex-col items-center justify-around rounded shadow-lg">
+        <div className="w-80 md:w-96 h-[70vh] flex flex-col items-center justify-around rounded shadow-lg">
           <img className="delivery" />
           <div className="flex justify-center">
             <div className="font-bold text-xl mb-2">Fast Shipping</div>
@@ -21,7 +21,7 @@ const Testimonials = () => {
         </div>
       </Tilt>
       <Tilt>
-        <div className="w-96 h-[70vh] flex flex-col items-center justify-around rounded shadow-lg">
+        <div className="w-80 md:w-96 h-[70vh] flex flex-col items-center justify-around rounded shadow-lg">
           <img className="refund" />
           <div className="flex justify-center">
             <div className="font-bold text-xl mb-2">Easy Refund</div>

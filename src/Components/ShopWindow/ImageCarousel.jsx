@@ -26,8 +26,7 @@ export default function ImageCarousel({ carouselImages }) {
           <div className="mx-auto mt-6">
             <img
               src={image.image}
-              className="mx-auto max-w-[100%] h-[80vh]"
-              alt={`slide-${index}`}
+              className="mx-auto h-[50vh] max-w-[100%] md:h-[80vh]"
             />
           </div>
         </div>
