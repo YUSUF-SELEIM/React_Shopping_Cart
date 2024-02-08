@@ -6,18 +6,19 @@ import LoadingSpinner from "../LoadingSpinner";
 import ErrorPage from "../ErrorPage";
 import { useChosenProducts } from "../ChosenProductsProvider";
 import Zoom from "react-img-zoom";
-import { useEffect, useState } from "react";
-
-const fetchSelectedProducts = async (id) => {
-  try {
-    const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
-    return response.data;
-  } catch (error) {
-    throw new Error("Error fetching Products: " + error.message);
-  }
-};
+import { useCallback, useEffect, useState } from "react";
 
 export default function ProductPage() {
+  const fetchSelectedProducts = useCallback(async (id) => {
+    try {
+      const response = await axios.get(
+        `https://fakestoreapi.com/products/${id}`
+      );
+      return response.data;
+    } catch (error) {
+      throw new Error("Error fetching Products: " + error.message);
+    }
+  }, []);
   const [isMobile, setIsMobile] = useState(false);
   const { chosenProducts, addChosenProduct } = useChosenProducts();
   const { id } = useParams();

@@ -4,20 +4,21 @@ import axios from "axios";
 import LoadingSpinner from "../LoadingSpinner";
 import ErrorPage from "../ErrorPage";
 import { Link } from "react-router-dom";
-
-const fetchProducts = async () => {
-  try {
-    const response = await axios.get("https://fakestoreapi.com/products");
-    return response.data;
-  } catch (error) {
-    throw new Error("Error fetching Products: " + error.message);
-  }
-};
+import { useCallback } from "react";
 
 export default function Products() {
+  const fetchProducts = useCallback(async () => {
+    try {
+      const response = await axios.get("https://fakestoreapi.com/products");
+      return response.data;
+    } catch (error) {
+      throw new Error("Error fetching Products: " + error.message);
+    }
+  }, []);
   const { data, isLoading, error } = useQuery({
     queryKey: ["Products"],
     queryFn: fetchProducts,
+    staleTime: Infinity, // Cache indefinitely
   });
 
   if (isLoading) {
